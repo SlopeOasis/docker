@@ -8,6 +8,8 @@ services:
       POSTGRES_DB: userdb
     ports:
       - "5432:5432"
+    volumes:
+      - user_data:/var/lib/postgresql/data
     networks:
       - microservices-network
 
@@ -20,6 +22,8 @@ services:
       POSTGRES_DB: paymentdb
     ports:
       - "5433:5432"
+    volumes:
+      - payment_data:/var/lib/postgresql/data
     networks:
       - microservices-network
 
@@ -32,9 +36,16 @@ services:
       POSTGRES_DB: postdb
     ports:
       - "5434:5432"
+    volumes:
+      - post_data:/var/lib/postgresql/data
     networks:
       - microservices-network
 
 networks:
   microservices-network:
     driver: bridge
+
+volumes:
+  user_data:
+  payment_data:
+  post_data:
