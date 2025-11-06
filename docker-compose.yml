@@ -1,0 +1,40 @@
+services:
+  user-db:
+    image: postgres:15
+    container_name: user-service-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: userdb
+    ports:
+      - "5432:5432"
+    networks:
+      - microservices-network
+
+  payment-db:
+    image: postgres:15
+    container_name: payment-service-db
+    environment:
+      POSTGRES_USER: payment
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: paymentdb
+    ports:
+      - "5433:5432"
+    networks:
+      - microservices-network
+
+  post-db:
+    image: postgres:15
+    container_name: post-service-db
+    environment:
+      POSTGRES_USER: post
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postdb
+    ports:
+      - "5434:5432"
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge
