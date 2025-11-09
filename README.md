@@ -6,3 +6,6 @@
 
 <b>ustavitev:</b> docker-compose down
 <b>ustavitev + pobris podadtkov:</b> docker-compose down -v
+
+
+<b>za vizualno bolj kul bazo</b> http://localhost:5000/login
