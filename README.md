@@ -5,6 +5,7 @@
 <b>status:</b> docker ps
 
 <b>ustavitev:</b> docker-compose down
+
 <b>ustavitev + pobris podadtkov:</b> docker-compose down -v
 
 
